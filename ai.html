@@ -1,0 +1,641 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>خطة برنامج AI Engineer</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap">
+<style>
+/* Layout: an e-book on a desk — one A4-like sheet at a time, running head + folio, bottom toolbar with page turns and a contents drawer. */
+:root{
+  --desk:#E4EAE7; --sheet:#FBFCFB; --ink:#16221F; --muted:#5A6A65; --line:#D3DCD8; --soft:#EEF3F1;
+  --accent:#0C6A57; --accent-ink:#FFFFFF; --mark:#9A5B00; --mark-bg:#FBF0DC;
+  --cover:#0F3A31; --cover-ink:#F1F6F4; --cover-muted:#A9C6BD;
+  --l1:#2E6A9E; --l2:#0C6A57; --l3:#74489B; --l4:#A9502A; --l5:#1B6F80;
+  --shadow:0 1px 2px rgba(16,34,30,.08),0 12px 32px rgba(16,34,30,.10);
+  --f-display:"Reem Kufi","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --f-body:"IBM Plex Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --desk:#0C1110; --sheet:#151D1A; --ink:#E3ECE8; --muted:#9BABA5; --line:#2A3631; --soft:#1B2521;
+  --accent:#4DBF9F; --accent-ink:#06231C; --mark:#E8AE52; --mark-bg:#2E2414;
+  --cover:#0A2620; --cover-ink:#EAF3EF; --cover-muted:#8FB3A8;
+  --l1:#6FA8DA; --l2:#4DBF9F; --l3:#B08AD6; --l4:#E08A62; --l5:#5BB7C9;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --desk:#0C1110; --sheet:#151D1A; --ink:#E3ECE8; --muted:#9BABA5; --line:#2A3631; --soft:#1B2521;
+  --accent:#4DBF9F; --accent-ink:#06231C; --mark:#E8AE52; --mark-bg:#2E2414;
+  --cover:#0A2620; --cover-ink:#EAF3EF; --cover-muted:#8FB3A8;
+  --l1:#6FA8DA; --l2:#4DBF9F; --l3:#B08AD6; --l4:#E08A62; --l5:#5BB7C9;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.35); color-scheme:dark}
+*{box-sizing:border-box}
+html{direction:rtl}
+body{background:var(--desk);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.7;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 96px}
+.book{max-width:920px;margin-inline:auto;display:grid;gap:28px}
+.sheet{background:var(--sheet);box-shadow:var(--shadow);border-radius:4px;min-height:min(1240px,calc(100vw*1.3));display:flex;flex-direction:column;min-width:0;position:relative}
+.book.paged .sheet{display:none}
+.book.paged .sheet.on{display:flex;animation:turn .28s ease-out}
+@keyframes turn{from{opacity:.0;transform:translateX(-14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.book.paged .sheet.on{animation:none}}
+.run{display:flex;justify-content:space-between;gap:12px;padding:18px 48px 0;color:var(--muted);font-size:12px;letter-spacing:.02em;border-bottom:0}
+.run span:last-child{color:var(--accent);font-weight:600}
+.inner{padding:20px 48px 32px;flex:1;min-width:0}
+.folio{text-align:center;color:var(--muted);font-size:12px;padding:0 0 18px;font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.35;margin:0}
+h2{font-size:28px;font-weight:700;margin-block:6px 14px}
+h3{font-size:18px;font-weight:600;margin-block:22px 10px;color:var(--ink)}
+p{margin:0 0 12px}
+ul{margin:0;padding-inline-start:20px;display:grid;gap:6px}
+.lead{font-size:16.5px;max-width:65ch}
+.cap{color:var(--muted);font-size:12.5px;margin-top:6px}
+.num{font-variant-numeric:tabular-nums;text-align:center;white-space:nowrap}
+[lang="en"]{font-family:var(--f-body)}
+
+/* cover */
+.sheet.is-cover{background:var(--cover);color:var(--cover-ink);overflow:hidden}
+.cover{padding:48px;display:flex;flex-direction:column;gap:36px;min-height:inherit;position:relative}
+.cover::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,transparent 0 47px,color-mix(in srgb,var(--cover-ink) 6%,transparent) 47px 48px),
+  repeating-linear-gradient(0deg,transparent 0 47px,color-mix(in srgb,var(--cover-ink) 6%,transparent) 47px 48px);pointer-events:none}
+.cover>*{position:relative}
+.cv-org{font-size:13px;color:var(--cover-muted)}
+.cv-mid{margin-top:auto}
+.cv-kick{font-size:14px;color:var(--cover-muted);margin-bottom:8px;letter-spacing:.04em}
+.cv-title{font-size:clamp(34px,7vw,64px);font-weight:700;line-height:1.2}
+.cv-title span{display:block;font-family:var(--f-body);font-weight:500;font-size:.48em;letter-spacing:.06em;color:var(--cover-muted);margin-top:8px;text-align:right}
+.cv-sub{max-width:44ch;font-size:16px;color:var(--cover-ink);opacity:.9;margin-top:18px}
+.cv-steps{display:grid;grid-template-columns:repeat(5,1fr);align-items:end;gap:6px}
+.cv-steps div{border-top:3px solid var(--cover-ink);padding-top:8px;display:grid;gap:2px}
+.cv-steps div:nth-child(1){margin-top:0}
+.cv-steps div:nth-child(2){padding-top:20px}.cv-steps div:nth-child(3){padding-top:32px}.cv-steps div:nth-child(4){padding-top:44px}.cv-steps div:nth-child(5){padding-top:56px}
+.cv-steps b{font-family:var(--f-display);font-size:22px}
+.cv-steps span{font-size:12px;color:var(--cover-muted);line-height:1.4}
+.cv-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0;border-top:1px solid color-mix(in srgb,var(--cover-ink) 25%,transparent);padding-top:18px}
+.cv-facts div{display:grid}
+.cv-facts dt{font-size:12px;color:var(--cover-muted)}
+.cv-facts dd{margin:0;font-family:var(--f-display);font-size:24px;font-variant-numeric:tabular-nums}
+.cv-date{font-size:12px;color:var(--cover-muted);margin:0}
+
+/* toc */
+.toc{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:0;counter-reset:t}
+.toc a{display:flex;align-items:baseline;gap:10px;padding:11px 4px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:16px}
+.toc a::after{content:"";order:1;flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
+.toc .tn{order:0}.toc .tpg{order:2;color:var(--muted);font-variant-numeric:tabular-nums}
+.toc a:hover .tn,.toc a:focus-visible .tn{color:var(--accent)}
+
+/* overview */
+.timeline{display:flex;gap:3px;margin-top:18px;height:58px}
+.seg{border-radius:3px;color:#fff;padding:6px 10px;display:flex;flex-direction:column;justify-content:center;min-width:0;overflow:hidden}
+.seg b{font-family:var(--f-display);font-size:16px;line-height:1.1}.seg span{font-size:11.5px;opacity:.92;white-space:nowrap}
+.s-L1{background:var(--l1)}.s-L2{background:var(--l2)}.s-L3{background:var(--l3)}.s-L4{background:var(--l4)}.s-L5{background:var(--l5)}
+:root .seg,:root .badge{color:var(--sheet)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cols section{min-width:0}
+.day{display:flex;gap:3px;margin-top:4px}
+.day div{background:var(--soft);border-top:3px solid var(--accent);padding:8px 10px;display:grid;gap:2px;min-width:0}
+.day b{font-variant-numeric:tabular-nums;color:var(--accent)}.day span{font-size:12.5px;line-height:1.5}
+
+/* tables */
+.tw{overflow-x:auto;margin-top:12px;border:1px solid var(--line);border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:7px 12px;text-align:right;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--soft);font-weight:600;font-size:12.5px;color:var(--muted);position:sticky;top:0}
+.plan tbody th{font-weight:600;width:28%;background:color-mix(in srgb,var(--soft) 55%,transparent);border-left:1px solid var(--line)}
+.plan .sub td{font-weight:600;color:var(--accent)}
+.plan .proj td,.plan .proj th{background:var(--mark-bg)}
+.plan .proj th{color:var(--mark)}
+.plan tbody:last-child tr:last-child>*{border-bottom:0}
+.sum tbody th{width:auto}
+.sum .tot>tr>*{font-weight:700;border-top:2px solid var(--ink)}
+.sum .opt>tr>*{color:var(--muted)}
+.est{display:inline-block;font-size:11px;font-weight:500;color:var(--mark);border:1px solid currentColor;border-radius:999px;padding:0 7px;margin-inline-start:4px;line-height:1.6;vertical-align:1px}
+
+/* level page */
+.lvhead{display:flex;gap:16px;align-items:flex-start}
+.lvhead>div{min-width:0}
+.badge{font-family:var(--f-display);font-size:22px;font-weight:700;border-radius:4px;padding:6px 12px;flex:none;margin-top:8px}
+.meta{color:var(--muted);margin-bottom:6px}.meta b{color:var(--ink);font-variant-numeric:tabular-nums}
+.goal{background:var(--soft);padding:12px 16px;border-radius:4px;display:flex;gap:12px;max-width:none}
+.goal span,.assess span{font-weight:700;color:var(--accent);flex:none}
+.total{margin-top:12px;text-align:left;color:var(--muted)}.total b{color:var(--ink)}
+.assess{margin-top:8px;padding:12px 16px;border:1px solid var(--mark);background:var(--mark-bg);border-radius:4px;display:flex;gap:12px}
+.assess span{color:var(--mark)}
+
+/* placement */
+.fast{margin-top:22px;padding:4px 18px 10px;border:1px solid var(--line);border-radius:4px}
+.path{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted)}
+.path span{background:var(--soft);color:var(--ink);padding:3px 10px;border-radius:3px;font-weight:600}
+
+/* weekly */
+.wk{font-size:12.5px;table-layout:fixed}
+.wk thead th:first-child,.wk tbody th{width:64px}
+.wk tbody th{font-family:var(--f-display);font-size:16px;color:var(--muted);background:color-mix(in srgb,var(--soft) 55%,transparent)}
+.wk td{border-inline-start:1px solid var(--line);line-height:1.5}
+.it{display:block;padding-inline-start:8px;border-inline-start:3px solid var(--line);margin-bottom:5px}
+.it.lv-L1{border-color:var(--l1)}.it.lv-L2{border-color:var(--l2)}.it.lv-L3{border-color:var(--l3)}.it.lv-L4{border-color:var(--l4)}.it.lv-L5{border-color:var(--l5)}
+.tk{display:block;font-size:11px;color:var(--muted)}
+.tp{font-weight:500}
+.pt{color:var(--muted);font-variant-numeric:tabular-nums;font-size:11.5px;white-space:nowrap}
+.half{font-size:11px;color:var(--muted)}
+.ev{display:inline-block;background:var(--mark-bg);color:var(--mark);border:1px solid var(--mark);border-radius:3px;font-weight:600;font-size:11.5px;padding:1px 7px;margin-top:2px}
+.ev.inl{margin:0}
+
+/* toolbar */
+.bar{position:fixed;inset:auto 0 0 0;z-index:20;display:flex;justify-content:center;
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));pointer-events:none}
+.bar-in{pointer-events:auto;display:flex;align-items:center;gap:6px;background:var(--sheet);box-shadow:var(--shadow);border:1px solid var(--line);border-radius:999px;padding:6px;max-width:100%}
+.bar button{font:inherit;font-size:14px;border:0;background:transparent;color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.bar button:hover{background:var(--soft)}
+.bar button:focus-visible,.toc a:focus-visible,.drawer a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bar button:disabled{opacity:.35;cursor:default;background:transparent}
+.bar .pg{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;min-width:62px;text-align:center}
+.bar .primary{background:var(--accent);color:var(--accent-ink)}
+.bar .primary:hover{background:var(--accent);filter:brightness(1.08)}
+.drawer{position:fixed;z-index:30;top:0;bottom:0;right:0;width:min(340px,88vw);background:var(--sheet);box-shadow:var(--shadow);border-left:1px solid var(--line);
+  padding:calc(20px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 20px 20px;overflow:auto;transform:translateX(105%);transition:transform .22s ease}
+.drawer.open{transform:none}
+@media (prefers-reduced-motion:reduce){.drawer{transition:none}}
+.drawer h2{font-size:20px;margin-bottom:10px}
+.drawer ol{list-style:none;padding:0;margin:0}
+.drawer a{display:flex;justify-content:space-between;gap:10px;padding:9px 10px;border-radius:4px;color:var(--ink);text-decoration:none;font-size:14px}
+.drawer a:hover{background:var(--soft)}
+.drawer a.cur{background:var(--soft);color:var(--accent);font-weight:600}
+.drawer a span:last-child{color:var(--muted);font-variant-numeric:tabular-nums}
+.scrim{position:fixed;inset:0;z-index:25;background:rgba(0,0,0,.35)}
+
+@media (max-width:640px){
+  body{padding-block:12px 88px}
+  .run{padding:14px 18px 0}.inner{padding:14px 18px 24px}
+  .cover{padding:28px 22px;gap:28px}
+  h2{font-size:23px}
+  .cols{grid-template-columns:1fr;gap:4px}
+  .cv-steps{grid-template-columns:1fr;gap:0}
+  .cv-steps div,.cv-steps div:nth-child(n){padding:8px 0 8px;border-top-width:1px;display:flex;gap:12px;align-items:baseline}
+  .cv-facts{grid-template-columns:1fr 1fr}
+  .timeline{height:auto;flex-direction:column}
+  .seg{flex:none!important;flex-direction:row;gap:10px;align-items:baseline;padding:6px 10px}
+  .lvhead{flex-direction:column;gap:4px}.badge{margin-top:0}
+  .plan tbody th{width:34%}
+  .wk{min-width:560px}
+  .sheet{min-height:0}
+  .bar .lbl{display:none}
+  .goal,.assess{flex-direction:column;gap:2px}
+  .day{flex-direction:column}.day div{flex:none!important;grid-template-columns:52px 1fr;align-items:baseline}
+}
+</style>
+
+<main class="book paged" id="book">
+<section class="sheet is-cover" id="cover" data-title="الغلاف" aria-label="الغلاف">
+
+<div class="inner"><div class="cover">
+<div class="cv-top"><span class="cv-org">مبني على دورة الذكاء الاصطناعي · أكاديمية حسوب</span></div>
+<div class="cv-mid">
+<p class="cv-kick">برنامج تدريبي</p>
+<h1 class="cv-title">مهندس الذكاء الاصطناعي<br><span lang="en" dir="ltr">AI Engineer</span></h1>
+<p class="cv-sub">من أول سطر بايثون لحد بناء وكلاء ذكية بـ Pydantic AI و MCP، في 5 مستويات ومشروع تخرج.</p>
+</div>
+<div class="cv-steps" aria-label="المستويات">
+<div><b>L1</b><span>الأساسيات والبيانات</span></div><div><b>L2</b><span>تعلم الآلة</span></div><div><b>L3</b><span>التعلم العميق والرؤية</span></div><div><b>L4</b><span>LLMs و Transformers</span></div><div><b>L5</b><span>الوكلاء والتخرج</span></div>
+</div>
+<dl class="cv-facts"><div><dt>الساعات</dt><dd>502.5</dd></div><div><dt>الأيام الدراسية</dt><dd>167.5</dd></div><div><dt>الأسابيع</dt><dd>56</dd></div><div><dt>المدة</dt><dd>≈ 13 شهر</dd></div></dl>
+<p class="cv-date">أكتوبر 2026</p>
+</div></div>
+
+</section>
+<section class="sheet" id="toc" data-title="الفهرس" aria-label="الفهرس">
+<header class="run"><span>خطة برنامج AI Engineer</span><span></span></header>
+<div class="inner"><h2>الفهرس</h2><ol class="toc"><li><a href="#overview"><span class="tn">نظرة عامة ونظام الدراسة</span><span class="tpg">3</span></a></li><li><a href="#l1"><span class="tn">المستوى 1: الأساسيات والبيانات</span><span class="tpg">4</span></a></li><li><a href="#l2"><span class="tn">المستوى 2: تعلم الآلة</span><span class="tpg">5</span></a></li><li><a href="#l3"><span class="tn">المستوى 3: التعلم العميق والرؤية الحاسوبية</span><span class="tpg">6</span></a></li><li><a href="#l4"><span class="tn">المستوى 4: النماذج اللغوية الكبيرة و Transformers</span><span class="tpg">7</span></a></li><li><a href="#l5"><span class="tn">المستوى 5: وكلاء الذكاء الاصطناعي ومشروع التخرج</span><span class="tpg">8</span></a></li><li><a href="#rl"><span class="tn">مسار اختياري: Reinforcement Learning</span><span class="tpg">9</span></a></li><li><a href="#placement"><span class="tn">الطالب يبدأ منين وملاحظات</span><span class="tpg">10</span></a></li><li><a href="#w-l1"><span class="tn">الجدول الأسبوعي: L1</span><span class="tpg">11</span></a></li><li><a href="#w-l2"><span class="tn">الجدول الأسبوعي: L2</span><span class="tpg">12</span></a></li><li><a href="#w-l3"><span class="tn">الجدول الأسبوعي: L3</span><span class="tpg">13</span></a></li><li><a href="#w-l4"><span class="tn">الجدول الأسبوعي: L4</span><span class="tpg">14</span></a></li><li><a href="#w-l5"><span class="tn">الجدول الأسبوعي: L5</span><span class="tpg">15</span></a></li></ol></div>
+<footer class="folio">2 / 15</footer>
+</section>
+<section class="sheet" id="overview" data-title="نظرة عامة ونظام الدراسة" aria-label="نظرة عامة ونظام الدراسة">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>مقدمة</span></header>
+<div class="inner"><h2>نظرة عامة</h2>
+<p class="lead">البرنامج 5 مستويات أساسية + مسار اختياري: <b>502.5 ساعة، 167.5 يوم دراسي، ≈ 56 أسبوع ≈ 13 شهر</b>، بنظام 3 أيام في الأسبوع × 3 ساعات في اليوم (9 ساعات أسبوعيًا).</p>
+<div class="timeline" aria-label="طول كل مستوى بالأيام"><div class="seg s-L1" style="flex:41" title="L1: 41 يوم"><b>L1</b><span>41 يوم</span></div><div class="seg s-L2" style="flex:29" title="L2: 29 يوم"><b>L2</b><span>29 يوم</span></div><div class="seg s-L3" style="flex:47.5" title="L3: 47.5 يوم"><b>L3</b><span>47.5 يوم</span></div><div class="seg s-L4" style="flex:21" title="L4: 21 يوم"><b>L4</b><span>21 يوم</span></div><div class="seg s-L5" style="flex:29" title="L5: 29 يوم"><b>L5</b><span>29 يوم</span></div></div>
+<p class="cap">طول كل شريط = عدد أيام المستوى. من أسبوع 1 لأسبوع 56.</p>
+<div class="cols">
+<section><h3>نظام الدراسة</h3><ul>
+<li>3 أيام في الأسبوع (مثلًا: سبت – إثنين – أربعاء)، 3 ساعات في اليوم.</li>
+<li>لو 2 يوم بس في الأسبوع (6 ساعات): نفس المحتوى، والمدة تزيد مرة ونص (≈ 19 شهر للبرنامج كله).</li>
+<li>الحساب: كل فيديو ≈ 45 دقيقة من وقت الطالب (مشاهدة + تطبيق)، يعني ≈ 4 فيديوهات في اليوم و12 في الأسبوع.</li></ul></section>
+<section><h3>شكل اليوم الدراسي (3 ساعات)</h3>
+<div class="day"><div style="flex:30"><b>30 د</b><span>مراجعة اليوم اللي فات وحل أسئلة الطلاب</span></div><div style="flex:90"><b>90 د</b><span>شرح المحتوى (الفيديوهات المقررة لليوم)</span></div><div style="flex:60"><b>60 د</b><span>تطبيق عملي (Lab) وواجب صغير</span></div></div></section>
+</div>
+<h3>ملخص المستويات</h3>
+<div class="tw"><table class="plan sum"><thead><tr><th>المستوى</th><th>المسارات</th><th class="num">الساعات</th><th class="num">الأيام</th><th class="num">الأسابيع</th><th class="num">المدة</th></tr></thead>
+<tbody><tr><th scope="row">L1 الأساسيات والبيانات</th><td>أساسيات بايثون، التعامل مع البيانات، تحليل البيانات</td><td class="num">123</td><td class="num">41</td><td class="num">14</td><td class="num">3.2 شهر</td></tr><tr><th scope="row">L2 تعلم الآلة</th><td>Machine Learning، تطوير نماذج ذكاء اصطناعي لمتجر إلكتروني</td><td class="num">87</td><td class="num">29</td><td class="num">10</td><td class="num">2.2 شهر</td></tr><tr><th scope="row">L3 التعلم العميق والرؤية الحاسوبية</th><td>Deep Learning، التعرف على الصور، Transfer Learning، الرؤية الحاسوبية</td><td class="num">142.5</td><td class="num">47.5</td><td class="num">16</td><td class="num">3.7 شهر</td></tr><tr><th scope="row">L4 النماذج اللغوية و Transformers</th><td>LLMs، Transformers</td><td class="num">63</td><td class="num">21</td><td class="num">7</td><td class="num">1.6 شهر</td></tr><tr><th scope="row">L5 وكلاء الذكاء الاصطناعي + التخرج</th><td>Pydantic AI، MCP، مشروع التخرج</td><td class="num">87</td><td class="num">29</td><td class="num">10</td><td class="num">2.2 شهر</td></tr></tbody>
+<tbody class="tot"><tr><th scope="row">الإجمالي</th><td></td><td class="num">502.5</td><td class="num">167.5</td><td class="num">56</td><td class="num">≈ 13 شهر</td></tr></tbody>
+<tbody class="opt"><tr><th scope="row">اختياري</th><td>Reinforcement Learning</td><td class="num">36</td><td class="num">12</td><td class="num">4</td><td class="num">شهر</td></tr></tbody></table></div></div>
+<footer class="folio">3 / 15</footer>
+</section>
+<section class="sheet" id="l1" data-title="المستوى 1: الأساسيات والبيانات" aria-label="المستوى 1: الأساسيات والبيانات">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>المستوى 1</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L1">L1</span><div><h2>المستوى 1: الأساسيات والبيانات</h2>
+<p class="meta"><b>123</b> ساعة · <b>41</b> يوم · ≈ 14 أسبوع · ≈ 3.2 شهر · أسبوع 1–14</p></div></div>
+<p class="goal"><span>الهدف</span>الطالب يكتب بايثون ويجيب البيانات من أي مصدر ويحللها ويعرضها.</p>
+<div class="tw"><table class="plan"><thead><tr><th>المسار</th><th>الموضوع</th><th class="num">الساعات</th><th class="num">الأيام</th></tr></thead>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="7">أساسيات بايثون</th><td>مدخل</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>أساسيات لغة بايثون</td><td class="num">12</td><td class="num">4</td></tr>
+<tr><td>الوحدات Modules والحزم Packages</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التعابير النمطية Regular Expressions</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التعامل مع الملفات النصية</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>استخراج البيانات من الويب Web scraping</td><td class="num">6</td><td class="num">2</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">28.5</td><td class="num">9.5</td></tr>
+</tbody>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="8">التعامل مع البيانات <span class="est" title="توزيع الساعات على الموضوعات تقديري">تقديري</span></th><td>مدخل</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>قواعد البيانات Databases</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>لغة الاستعلام SQL</td><td class="num">7.5</td><td class="num">2.5</td></tr>
+<tr><td>قواعد بيانات NoSQL</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>الواجهات البرمجية APIs</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>استخراج البيانات من الويب</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>التعامل مع ملفات Excel و CSV</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">34.5</td><td class="num">11.5</td></tr>
+</tbody>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="13">تحليل البيانات Data Analysis</th><td>مدخل</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التعامل مع البيانات والإحصاء</td><td class="num">13.5</td><td class="num">4.5</td></tr>
+<tr><td>تمثيل البيانات مرئيًا عبر Pandas</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تحليل البيانات مرئيًا عبر Matplotlib</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>تمثيل البيانات مرئيًا عبر Seaborn</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>تحليل أداء الطلاب في إحدى المدارس</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تحليل بيانات متجر إلكتروني لتحسين استراتيجية المبيعات</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تحليل سلوك العملاء</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تحليل بيانات الحملات التسويقية لتحسين استراتيجيتها</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تحليل بيانات حملة تسويقية لبنك للتنبؤ باشتراك العملاء</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تحليل مبيعات السيارات</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>الخاتمة</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">51</td><td class="num">17</td></tr>
+</tbody>
+<tbody class="proj">
+<tr><th scope="rowgroup" rowspan="1">مشروع المستوى</th><td>جمع بيانات (Scraping أو API أو SQL) + تنظيف + تحليل + Dashboard</td><td class="num">9</td><td class="num">3</td></tr>
+</tbody>
+</table></div>
+<p class="total">إجمالي المستوى 1: <b>123 ساعة · 41 يوم</b></p>
+<div class="assess"><span>التقييم</span>اختبار بايثون بعد آخر المسار الأول + مشروع المستوى. شرط الانتقال للمستوى 2: النجاح في المشروع.</div></div>
+<footer class="folio">4 / 15</footer>
+</section>
+<section class="sheet" id="l2" data-title="المستوى 2: تعلم الآلة" aria-label="المستوى 2: تعلم الآلة">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>المستوى 2</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L2">L2</span><div><h2>المستوى 2: تعلم الآلة</h2>
+<p class="meta"><b>87</b> ساعة · <b>29</b> يوم · ≈ 10 أسابيع · ≈ 2.2 شهر · أسبوع 14–24</p></div></div>
+<p class="goal"><span>الهدف</span>الطالب يبني ويقيّم نماذج ML ويربطها بتطبيق حقيقي عن طريق API.</p>
+<div class="tw"><table class="plan"><thead><tr><th>المسار</th><th>الموضوع</th><th class="num">الساعات</th><th class="num">الأيام</th></tr></thead>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="16">تعلم الآلة Machine Learning</th><td>مدخل</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>مدخل إلى مكتبة Numpy</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>مدخل إلى مكتبة Scikit-learn</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>الانحدار Regressions</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>التصنيف Classification</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التصنيف باستخدام الانحدار اللوجيستي Logistic Regression</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التصنيف باستخدام مصنفات بايز Naive Bayes Classifiers</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التصنيف باستخدام أشجار القرار Decision Trees</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التصنيف باستخدام مصنف الجار الأقرب K-Nearest Neighbors</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>مصنف الدعم الآلي للمتجه Support Vector Machine</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تقييم نماذج التصنيف Models Evaluation</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التجميع Clustering</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>الترابط Association</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>التعلم المعزز Reinforcement Learning</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>الخاتمة</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">51</td><td class="num">17</td></tr>
+</tbody>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="8">تطوير نماذج ذكاء اصطناعي لمتجر إلكتروني <span class="est" title="توزيع الساعات على الموضوعات تقديري">تقديري</span></th><td>مدخل</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>تحليل بيانات المتجر الإلكتروني</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>توصيات الشراء بالنسبة للمنتجات المترابطة Association</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>توصيات الشراء حسب معلومات الزبون Classification</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>توقعات المبيعات المستقبلية Time Series</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>تطوير API لدمج الذكاء الاصطناعي مع المتجر</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>الخاتمة</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">27</td><td class="num">9</td></tr>
+</tbody>
+<tbody class="proj">
+<tr><th scope="rowgroup" rowspan="1">مشروع المستوى</th><td>نموذج توصيات أو توقع مبيعات منشور كـ API</td><td class="num">9</td><td class="num">3</td></tr>
+</tbody>
+</table></div>
+<p class="total">إجمالي المستوى 2: <b>87 ساعة · 29 يوم</b></p>
+<div class="assess"><span>التقييم</span>اختبار نظري بعد مسار Machine Learning + مشروع المستوى.</div></div>
+<footer class="folio">5 / 15</footer>
+</section>
+<section class="sheet" id="l3" data-title="المستوى 3: التعلم العميق والرؤية الحاسوبية" aria-label="المستوى 3: التعلم العميق والرؤية الحاسوبية">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>المستوى 3</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L3">L3</span><div><h2>المستوى 3: التعلم العميق والرؤية الحاسوبية</h2>
+<p class="meta"><b>142.5</b> ساعة · <b>47.5</b> يوم · ≈ 16 أسبوع · ≈ 3.7 شهر · أسبوع 24–40</p></div></div>
+<p class="goal"><span>الهدف</span>الطالب يبني شبكات عصبية (ANN، CNN، RNN) ويستخدم نماذج جاهزة ويصقلها للصور والنصوص.</p>
+<div class="tw"><table class="plan"><thead><tr><th>المسار</th><th>الموضوع</th><th class="num">الساعات</th><th class="num">الأيام</th></tr></thead>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="19">التعلم العميق Deep Learning</th><td>مدخل</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>أساسيات الشبكات العصبية ANN</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>أدوات التعلم العميق</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>التنبؤ بتسرب الزبائن في بنك باستخدام الشبكات العصبية</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تصنيف بريد إلكتروني المزعج باستخدام الشبكات العصبية</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تصنيف صور الأرقام المكتوبة بخط اليد</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التنبؤ بالزبائن المهمين</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>التنبؤ بأسعار المنازل</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>الشبكات العصبية التلافيفية CNN</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التعرف على الصور باستخدام الشبكات التلافيفية</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>الشبكات العصبية التكرارية RNN</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تحليل المشاعر في التغريدات العربية</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>التنبؤ بأسعار الأسهم والعملات</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تصنيف الشخصيات بالاعتماد على تغريداتهم</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>بناء بوت محادثة</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تصنيف الأخبار الكاذبة</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التنبؤ بوقوع الزلازل</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>خاتمة</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">52.5</td><td class="num">17.5</td></tr>
+</tbody>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="8">التعرف على الصور باستخدام الشبكات العصبية <span class="est" title="توزيع الساعات على الموضوعات تقديري">تقديري</span></th><td>مدخل</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>تحليل بيانات تطبيق الويب</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>نموذج التعرف على مكونات الصورة</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>خاصية الاقتراحات بناء على صورة وجبة</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>خاصية الاقتراحات الشخصية</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>دمج تقنيات الذكاء الاصطناعي مع تطبيق الويب باستخدام API</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>الخاتمة</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">21</td><td class="num">7</td></tr>
+</tbody>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="11">تطبيقات عملية على نقل التعلم Transfer Learning <span class="est" title="توزيع الساعات على الموضوعات تقديري">تقديري</span></th><td>مدخل</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>آلية عمل نقل التعلم</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>تصنيف ثنائي للصور</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تصنيف صور متعددة الأصناف</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التعرف على المشاعر في الوجوه</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تمثيل النصوص Texts representation</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تدريب وصقل نماذج تضمين الكلمات Embedding</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تصنيف الرسائل إلى مزعجة وغير مزعجة</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تصنيف التغريدات العربية</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>تصنيف الأخبار متعددة المواضيع</td><td class="num">3</td><td class="num">1</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">30</td><td class="num">10</td></tr>
+</tbody>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="6">تطبيقات عملية على نماذج الرؤية الحاسوبية <span class="est" title="توزيع الساعات على الموضوعات تقديري">تقديري</span></th><td>مدخل</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>مدخل إلى مكتبة OpenCV</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>التعرف على نماذج الرؤية الحاسوبية واستخداماتها</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>استخدام النموذج YOLO</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>تخصيص وصقل نماذج الرؤية الحاسوبية</td><td class="num">6</td><td class="num">2</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">21</td><td class="num">7</td></tr>
+</tbody>
+<tbody class="proj">
+<tr><th scope="rowgroup" rowspan="1">مشروع المستوى</th><td>تصنيف صور بـ CNN و Transfer Learning أو كشف أجسام بـ YOLO، مربوط بتطبيق ويب</td><td class="num">18</td><td class="num">6</td></tr>
+</tbody>
+</table></div>
+<p class="total">إجمالي المستوى 3: <b>142.5 ساعة · 47.5 يوم</b></p>
+<div class="assess"><span>التقييم</span>مشروع صغير بعد مسار Deep Learning + مشروع المستوى.</div></div>
+<footer class="folio">6 / 15</footer>
+</section>
+<section class="sheet" id="l4" data-title="المستوى 4: النماذج اللغوية الكبيرة و Transformers" aria-label="المستوى 4: النماذج اللغوية الكبيرة و Transformers">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>المستوى 4</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L4">L4</span><div><h2>المستوى 4: النماذج اللغوية الكبيرة و Transformers</h2>
+<p class="meta"><b>63</b> ساعة · <b>21</b> يوم · 7 أسابيع · ≈ 1.6 شهر · أسبوع 40–47</p></div></div>
+<p class="goal"><span>الهدف</span>الطالب يستخدم LLMs (GPT، DeepSeek، Llama) ويكتب Prompts احترافية ويصقل النماذج ويشغلها محليًا ويضيفها لمشاريع حقيقية.</p>
+<div class="tw"><table class="plan"><thead><tr><th>المسار</th><th>الموضوع</th><th class="num">الساعات</th><th class="num">الأيام</th></tr></thead>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="8">تطبيقات عملية على النماذج النصية الكبيرة LLMs</th><td>مدخل</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التعرف على النموذج GPT واستخداماته</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>التعرف على النموذج DeepSeek واستخدامه</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التعرف على النموذج Llama</td><td class="num">1.5</td><td class="num">0.5</td></tr>
+<tr><td>تخصيص وصقل نماذج اللغة الكبيرة</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>هندسة الموجهات Prompt Engineering</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>استخدام النماذج اللغوية الكبيرة محليًا</td><td class="num">3</td><td class="num">1</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">24</td><td class="num">8</td></tr>
+</tbody>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="6">تطبيقات عملية باستخدام المحوّلات Transformers</th><td>مقدمة المسار</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>إضافة الذكاء الاصطناعي لمتجر إلكتروني</td><td class="num">7.5</td><td class="num">2.5</td></tr>
+<tr><td>إضافة الذكاء الاصطناعي لمطعم</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>إضافة الذكاء الاصطناعي لفندق</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>إضافة الذكاء الاصطناعي لمركز خدمات</td><td class="num">6</td><td class="num">2</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">30</td><td class="num">10</td></tr>
+</tbody>
+<tbody class="proj">
+<tr><th scope="rowgroup" rowspan="1">مشروع المستوى</th><td>Chatbot أو مساعد ذكي لنشاط تجاري (Prompt Engineering + نموذج مصقول)</td><td class="num">9</td><td class="num">3</td></tr>
+</tbody>
+</table></div>
+<p class="total">إجمالي المستوى 4: <b>63 ساعة · 21 يوم</b></p>
+<div class="assess"><span>التقييم</span>تكليف Prompt Engineering + مشروع المستوى.</div></div>
+<footer class="folio">7 / 15</footer>
+</section>
+<section class="sheet" id="l5" data-title="المستوى 5: وكلاء الذكاء الاصطناعي ومشروع التخرج" aria-label="المستوى 5: وكلاء الذكاء الاصطناعي ومشروع التخرج">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>المستوى 5</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L5">L5</span><div><h2>المستوى 5: وكلاء الذكاء الاصطناعي ومشروع التخرج</h2>
+<p class="meta"><b>87</b> ساعة · <b>29</b> يوم · ≈ 10 أسابيع · ≈ 2.2 شهر · أسبوع 47–56</p></div></div>
+<p class="goal"><span>الهدف</span>الطالب يبني وكلاء ذكية بـ Pydantic AI ويربطها بأدوات وخدمات حقيقية عن طريق MCP، ويتخرج بمشروع كامل.</p>
+<div class="tw"><table class="plan"><thead><tr><th>المسار</th><th>الموضوع</th><th class="num">الساعات</th><th class="num">الأيام</th></tr></thead>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="4">بناء وكلاء ذكاء اصطناعي باستخدام Pydantic AI <span class="est" title="توزيع الساعات على الموضوعات تقديري">تقديري</span></th><td>مدخل إلى Pydantic AI</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>بناء وكيل ذكي لإدارة شركة توصيل</td><td class="num">7.5</td><td class="num">2.5</td></tr>
+<tr><td>بناء وكيل استقبال ذكي لعيادة طبية</td><td class="num">9</td><td class="num">3</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">21</td><td class="num">7</td></tr>
+</tbody>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="7">توسيع قدرات وكلاء الذكاء الاصطناعي باستخدام MCP</th><td>مقدمة المسار</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>استخدام نماذج اللغات الضخمة مع الخادم الضريبي المالي</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>وكيل ذكاء اصطناعي للأحوال الجوية</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>وكيل ذكي لمتجر إلكتروني على Telegram</td><td class="num">6</td><td class="num">2</td></tr>
+<tr><td>وكيل ذكاء اصطناعي لإدارة المواعيد</td><td class="num">12</td><td class="num">4</td></tr>
+<tr><td>وكيل ذكي لمركز مساعدة من زيتون</td><td class="num">9</td><td class="num">3</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">39</td><td class="num">13</td></tr>
+</tbody>
+<tbody class="proj">
+<tr><th scope="rowgroup" rowspan="1">مشروع التخرج</th><td>وكيل ذكي كامل (Pydantic AI + MCP): تصميم ← تنفيذ ← نشر وعرض أمام لجنة</td><td class="num">27</td><td class="num">9</td></tr>
+</tbody>
+</table></div>
+<p class="total">إجمالي المستوى 5: <b>87 ساعة · 29 يوم</b></p>
+<div class="assess"><span>التقييم</span>مشروع التخرج + عرض نهائي. النجاح فيه = شهادة AI Engineer.</div></div>
+<footer class="folio">8 / 15</footer>
+</section>
+<section class="sheet" id="rl" data-title="مسار اختياري: Reinforcement Learning" aria-label="مسار اختياري: Reinforcement Learning">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>اختياري</span></header>
+<div class="inner"><h2>مسار اختياري: التعلم المعزز Reinforcement Learning</h2>
+<p class="meta"><b>36</b> ساعة · <b>12</b> يوم · 4 أسابيع. يتاخد بعد المستوى 3 أو بعد التخرج.</p>
+<div class="tw"><table class="plan"><thead><tr><th>المسار</th><th>الموضوع</th><th class="num">الساعات</th><th class="num">الأيام</th></tr></thead>
+<tbody class="trk">
+<tr><th scope="rowgroup" rowspan="11">التعلم المعزز Reinforcement Learning</th><td>مقدمة المسار</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>مدخل إلى المكتبة Gymnasium</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>أمثلة تطبيقية على التعلم النوعي</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>التعلم المعزز العميق</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>إيصال الطرود باستخدام الدرون</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr><td>سيارة السباق آلية القيادة</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>لعبة Flappy Bird</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>مسألة ذراع الروبوت المتحركة</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>ألعاب الأتاري Atari Games</td><td class="num">3</td><td class="num">1</td></tr>
+<tr><td>استخدام التعلم المعزز مع مسألة المتاهة</td><td class="num">4.5</td><td class="num">1.5</td></tr>
+<tr class="sub"><td>إجمالي المسار</td><td class="num">36</td><td class="num">12</td></tr>
+</tbody>
+</table></div></div>
+<footer class="folio">9 / 15</footer>
+</section>
+<section class="sheet" id="placement" data-title="الطالب يبدأ منين وملاحظات" aria-label="الطالب يبدأ منين وملاحظات">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>تحديد المستوى</span></header>
+<div class="inner"><h2>الطالب يبدأ منين</h2>
+<p class="lead">اختبار تحديد مستوى قبل البداية، وعلى نتيجته الطالب يبدأ من النقطة المناسبة.</p>
+<div class="tw"><table class="plan"><thead><tr><th>خلفية الطالب</th><th>يبدأ من</th><th class="num">المدة المتبقية</th></tr></thead><tbody>
+<tr><td>مبتدئ تمامًا</td><td>L1 من الأول</td><td class="num">≈ 13 شهر</td></tr>
+<tr><td>بيعرف بايثون</td><td>L1 من مسار "التعامل مع البيانات"</td><td class="num">≈ 12 شهر</td></tr>
+<tr><td>بيعرف بايثون وتحليل بيانات</td><td>L2</td><td class="num">≈ 10 شهور</td></tr>
+<tr><td>عنده خلفية ML</td><td>L3</td><td class="num">≈ 7.5 شهر</td></tr></tbody></table></div>
+<div class="fast"><h3>مسار سريع (مركّز على LLMs والوكلاء)</h3>
+<p class="path"><span>L1</span>←<span>L2</span>←<span>L3: Deep Learning بس</span>←<span>L4</span>←<span>L5</span></p>
+<p><b>137.5 يوم ≈ 46 أسبوع ≈ 10.5 شهر.</b></p></div>
+<h3>ملاحظات</h3><ul>
+<li>عدد فيديوهات كل مسار مأخوذ من المنصة. توزيع الساعات على الموضوعات تقديري (≈ 45 دقيقة لكل فيديو) في 6 مسارات بس، ومتعلّم عليها بكلمة <span class="est">تقديري</span>: التعامل مع البيانات، المتجر الإلكتروني، التعرف على الصور، Transfer Learning، الرؤية الحاسوبية، Pydantic AI. باقي المسارات محسوبة بعدد فيديوهات كل موضوع الحقيقي.</li>
+<li>مسار "أرشيف المسارات الأقدم" مش داخل في الخطة.</li>
+<li>لو الدراسة 2 يوم بس في الأسبوع، الأيام والساعات زي ما هي، والمدة بالشهور تزيد مرة ونص (≈ 19 شهر).</li>
+<li>أسبوع الراحة بين كل مستوى والتاني مش محسوب، لو ضفته البرنامج يزيد شهر تقريبًا.</li></ul></div>
+<footer class="folio">10 / 15</footer>
+</section>
+<section class="sheet" id="w-l1" data-title="الجدول الأسبوعي: L1" aria-label="الجدول الأسبوعي: L1">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>الجدول الأسبوعي · L1</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L1">L1</span><div><h2>الجدول الأسبوعي: الأساسيات والبيانات</h2>
+<p class="meta">أسبوع 1–14. الرقم (2/5) يعني اليوم التاني من 5 أيام للموضوع. <span class="ev inl">التقييمات</span> في يومها.</p></div></div>
+<div class="tw"><table class="wk"><thead><tr><th class="num">الأسبوع</th><th>اليوم 1</th><th>اليوم 2</th><th>اليوم 3</th></tr></thead><tbody>
+<tr><th class="num" scope="row">1</th><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">مدخل</span></div><div class="it lv-L1"><span class="tp">أساسيات لغة بايثون</span> <span class="pt">1/5</span></div></td><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">أساسيات لغة بايثون</span> <span class="pt">2/5</span></div></td><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">أساسيات لغة بايثون</span> <span class="pt">3/5</span></div></td></tr>
+<tr><th class="num" scope="row">2</th><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">أساسيات لغة بايثون</span> <span class="pt">4/5</span></div></td><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">أساسيات لغة بايثون</span> <span class="pt">5/5</span></div><div class="it lv-L1"><span class="tp">Modules والحزم</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">Modules والحزم</span> <span class="pt">2/2</span></div><div class="it lv-L1"><span class="tp">Regular Expressions</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">3</th><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">Regular Expressions</span> <span class="pt">2/2</span></div><div class="it lv-L1"><span class="tp">الملفات النصية</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">الملفات النصية</span> <span class="pt">2/2</span></div><div class="it lv-L1"><span class="tp">Web scraping</span> <span class="pt">1/3</span></div></td><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">Web scraping</span> <span class="pt">2/3</span></div></td></tr>
+<tr><th class="num" scope="row">4</th><td><div class="it lv-L1"><span class="tk">بايثون</span><span class="tp">Web scraping</span> <span class="pt">3/3</span></div><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">مدخل</span></div><div class="ev">اختبار بايثون</div></td><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">قواعد البيانات</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">قواعد البيانات</span> <span class="pt">2/2</span></div><div class="it lv-L1"><span class="tp">SQL</span> <span class="pt">1/3</span></div></td></tr>
+<tr><th class="num" scope="row">5</th><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">SQL</span> <span class="pt">2/3</span></div></td><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">SQL</span> <span class="pt">3/3</span></div></td><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">NoSQL</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">6</th><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">NoSQL</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">APIs</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">APIs</span> <span class="pt">2/2</span></div></td></tr>
+<tr><th class="num" scope="row">7</th><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">استخراج البيانات من الويب</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">استخراج البيانات من الويب</span> <span class="pt">2/2</span></div><div class="it lv-L1"><span class="tp">Excel و CSV</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L1"><span class="tk">التعامل مع البيانات</span><span class="tp">Excel و CSV</span> <span class="pt">2/2</span></div></td></tr>
+<tr><th class="num" scope="row">8</th><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">مدخل</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">التعامل مع البيانات والإحصاء</span> <span class="pt">1/5</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">التعامل مع البيانات والإحصاء</span> <span class="pt">2/5</span></div></td></tr>
+<tr><th class="num" scope="row">9</th><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">التعامل مع البيانات والإحصاء</span> <span class="pt">3/5</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">التعامل مع البيانات والإحصاء</span> <span class="pt">4/5</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">التعامل مع البيانات والإحصاء</span> <span class="pt">5/5</span></div><div class="it lv-L1"><span class="tp">Pandas</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">10</th><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">Pandas</span> <span class="pt">2/2</span></div><div class="it lv-L1"><span class="tp">Matplotlib</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">Matplotlib</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">Seaborn</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">11</th><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">Seaborn</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">أداء الطلاب</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">مبيعات متجر</span></div></td></tr>
+<tr><th class="num" scope="row">12</th><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">سلوك العملاء</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">الحملات التسويقية</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">حملة بنك</span></div></td></tr>
+<tr><th class="num" scope="row">13</th><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">مبيعات السيارات</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L1"><span class="tk">تحليل البيانات</span><span class="tp">مبيعات السيارات</span> <span class="pt">2/2</span></div><div class="it lv-L1"><span class="tp">الخاتمة</span></div></td><td><div class="it lv-L1"><span class="tp">مشروع المستوى 1</span> <span class="pt">1/3</span></div></td></tr>
+<tr><th class="num" scope="row">14</th><td><div class="it lv-L1"><span class="tp">مشروع المستوى 1</span> <span class="pt">2/3</span></div></td><td><div class="it lv-L1"><span class="tp">مشروع المستوى 1</span> <span class="pt">3/3</span></div><div class="ev">تسليم مشروع L1</div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">مدخل</span></div></td></tr>
+</tbody></table></div></div>
+<footer class="folio">11 / 15</footer>
+</section>
+<section class="sheet" id="w-l2" data-title="الجدول الأسبوعي: L2" aria-label="الجدول الأسبوعي: L2">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>الجدول الأسبوعي · L2</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L2">L2</span><div><h2>الجدول الأسبوعي: تعلم الآلة</h2>
+<p class="meta">أسبوع 14–24. الرقم (2/5) يعني اليوم التاني من 5 أيام للموضوع. <span class="ev inl">التقييمات</span> في يومها.</p></div></div>
+<div class="tw"><table class="wk"><thead><tr><th class="num">الأسبوع</th><th>اليوم 1</th><th>اليوم 2</th><th>اليوم 3</th></tr></thead><tbody>
+<tr><th class="num" scope="row">14</th><td><div class="it lv-L1"><span class="tp">مشروع المستوى 1</span> <span class="pt">2/3</span></div></td><td><div class="it lv-L1"><span class="tp">مشروع المستوى 1</span> <span class="pt">3/3</span></div><div class="ev">تسليم مشروع L1</div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">مدخل</span></div></td></tr>
+<tr><th class="num" scope="row">15</th><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Numpy</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Scikit-learn</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Regressions</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">16</th><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Regressions</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Classification</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Logistic Regression</span></div></td></tr>
+<tr><th class="num" scope="row">17</th><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Naive Bayes</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Decision Trees</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">KNN</span></div></td></tr>
+<tr><th class="num" scope="row">18</th><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">SVM</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">تقييم النماذج</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Clustering</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">19</th><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Clustering</span> <span class="pt">2/2</span></div><div class="it lv-L2"><span class="tp">Association</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Association</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Reinforcement Learning</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">20</th><td><div class="it lv-L2"><span class="tk">ML</span><span class="tp">Reinforcement Learning</span> <span class="pt">2/2</span></div><div class="it lv-L2"><span class="tp">الخاتمة</span></div><div class="ev">اختبار ML</div></td><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">مدخل</span></div><div class="it lv-L2"><span class="tp">تحليل بيانات المتجر</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">تحليل بيانات المتجر</span> <span class="pt">2/2</span></div></td></tr>
+<tr><th class="num" scope="row">21</th><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">توصيات Association</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">توصيات Association</span> <span class="pt">2/2</span></div><div class="it lv-L2"><span class="tp">توصيات Classification</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">توصيات Classification</span> <span class="pt">2/2</span></div></td></tr>
+<tr><th class="num" scope="row">22</th><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">Time Series</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">Time Series</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">API للمتجر</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">23</th><td><div class="it lv-L2"><span class="tk">المتجر الإلكتروني</span><span class="tp">API للمتجر</span> <span class="pt">2/2</span></div><div class="it lv-L2"><span class="tp">الخاتمة</span></div></td><td><div class="it lv-L2"><span class="tp">مشروع المستوى 2</span> <span class="pt">1/3</span></div></td><td><div class="it lv-L2"><span class="tp">مشروع المستوى 2</span> <span class="pt">2/3</span></div></td></tr>
+<tr><th class="num" scope="row">24</th><td><div class="it lv-L2"><span class="tp">مشروع المستوى 2</span> <span class="pt">3/3</span></div><div class="ev">تسليم مشروع L2</div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">مدخل</span></div><div class="it lv-L3"><span class="tp">ANN</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">ANN</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">أدوات التعلم العميق</span> <span class="pt">1/2</span></div></td></tr>
+</tbody></table></div></div>
+<footer class="folio">12 / 15</footer>
+</section>
+<section class="sheet" id="w-l3" data-title="الجدول الأسبوعي: L3" aria-label="الجدول الأسبوعي: L3">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>الجدول الأسبوعي · L3</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L3">L3</span><div><h2>الجدول الأسبوعي: التعلم العميق والرؤية الحاسوبية</h2>
+<p class="meta">أسبوع 24–40. الرقم (2/5) يعني اليوم التاني من 5 أيام للموضوع. <span class="ev inl">التقييمات</span> في يومها.</p></div></div>
+<div class="tw"><table class="wk"><thead><tr><th class="num">الأسبوع</th><th>اليوم 1</th><th>اليوم 2</th><th>اليوم 3</th></tr></thead><tbody>
+<tr><th class="num" scope="row">24</th><td><div class="it lv-L2"><span class="tp">مشروع المستوى 2</span> <span class="pt">3/3</span></div><div class="ev">تسليم مشروع L2</div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">مدخل</span></div><div class="it lv-L3"><span class="tp">ANN</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">ANN</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">أدوات التعلم العميق</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">25</th><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">أدوات التعلم العميق</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">تسرب زبائن بنك</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">البريد المزعج</span></div></td></tr>
+<tr><th class="num" scope="row">26</th><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">الأرقام بخط اليد</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">الزبائن المهمين</span></div><div class="it lv-L3"><span class="tp">أسعار المنازل</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">أسعار المنازل</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">CNN</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">27</th><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">CNN</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">التعرف على الصور بـ CNN</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">التعرف على الصور بـ CNN</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">RNN</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">RNN</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">مشاعر التغريدات</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">28</th><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">مشاعر التغريدات</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">الأسهم والعملات</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">تصنيف الشخصيات</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">29</th><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">تصنيف الشخصيات</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">بوت محادثة</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">بوت محادثة</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">الأخبار الكاذبة</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">الأخبار الكاذبة</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">الزلازل</span></div></td></tr>
+<tr><th class="num" scope="row">30</th><td><div class="it lv-L3"><span class="tk">DL</span><span class="tp">خاتمة</span></div><div class="it lv-L3"><span class="tk">التعرف على الصور</span><span class="tp">مدخل</span></div><div class="ev">مشروع DL صغير</div></td><td><div class="it lv-L3"><span class="tk">التعرف على الصور</span><span class="tp">بيانات تطبيق الويب</span></div></td><td><div class="it lv-L3"><span class="tk">التعرف على الصور</span><span class="tp">مكونات الصورة</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">31</th><td><div class="it lv-L3"><span class="tk">التعرف على الصور</span><span class="tp">مكونات الصورة</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">اقتراحات صورة وجبة</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">التعرف على الصور</span><span class="tp">اقتراحات صورة وجبة</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">الاقتراحات الشخصية</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">التعرف على الصور</span><span class="tp">الاقتراحات الشخصية</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">دمج API</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">32</th><td><div class="it lv-L3"><span class="tk">التعرف على الصور</span><span class="tp">دمج API</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L3"><span class="tk">التعرف على الصور</span><span class="tp">الخاتمة</span></div><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">مدخل</span></div></td><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">آلية نقل التعلم</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">33</th><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">آلية نقل التعلم</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">تصنيف ثنائي</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">تصنيف ثنائي</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">تصنيف متعدد</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">تصنيف متعدد</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">مشاعر الوجوه</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">34</th><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">مشاعر الوجوه</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">تمثيل النصوص</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">تمثيل النصوص</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">Embedding</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">Embedding</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">رسائل مزعجة</span> <span class="pt">1/2</span></div></td></tr>
+<tr><th class="num" scope="row">35</th><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">رسائل مزعجة</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">تغريدات عربية</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">تغريدات عربية</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">أخبار متعددة</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">Transfer Learning</span><span class="tp">أخبار متعددة</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tk">الرؤية الحاسوبية</span><span class="tp">مدخل</span></div></td></tr>
+<tr><th class="num" scope="row">36</th><td><div class="it lv-L3"><span class="tk">الرؤية الحاسوبية</span><span class="tp">OpenCV</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">الرؤية الحاسوبية</span><span class="tp">OpenCV</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">نماذج الرؤية</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L3"><span class="tk">الرؤية الحاسوبية</span><span class="tp">نماذج الرؤية</span> <span class="pt">2/2</span></div><div class="it lv-L3"><span class="tp">YOLO</span> <span class="pt">1/3</span></div></td></tr>
+<tr><th class="num" scope="row">37</th><td><div class="it lv-L3"><span class="tk">الرؤية الحاسوبية</span><span class="tp">YOLO</span> <span class="pt">2/3</span></div></td><td><div class="it lv-L3"><span class="tk">الرؤية الحاسوبية</span><span class="tp">YOLO</span> <span class="pt">3/3</span></div><div class="it lv-L3"><span class="tp">صقل نماذج الرؤية</span> <span class="pt">1/3</span></div></td><td><div class="it lv-L3"><span class="tk">الرؤية الحاسوبية</span><span class="tp">صقل نماذج الرؤية</span> <span class="pt">2/3</span></div></td></tr>
+<tr><th class="num" scope="row">38</th><td><div class="it lv-L3"><span class="tk">الرؤية الحاسوبية</span><span class="tp">صقل نماذج الرؤية</span> <span class="pt">3/3</span></div><div class="it lv-L3"><span class="tp">مشروع المستوى 3</span> <span class="pt">1/7</span></div></td><td><div class="it lv-L3"><span class="tp">مشروع المستوى 3</span> <span class="pt">2/7</span></div></td><td><div class="it lv-L3"><span class="tp">مشروع المستوى 3</span> <span class="pt">3/7</span></div></td></tr>
+<tr><th class="num" scope="row">39</th><td><div class="it lv-L3"><span class="tp">مشروع المستوى 3</span> <span class="pt">4/7</span></div></td><td><div class="it lv-L3"><span class="tp">مشروع المستوى 3</span> <span class="pt">5/7</span></div></td><td><div class="it lv-L3"><span class="tp">مشروع المستوى 3</span> <span class="pt">6/7</span></div></td></tr>
+<tr><th class="num" scope="row">40</th><td><div class="it lv-L3"><span class="tp">مشروع المستوى 3</span> <span class="pt">7/7</span></div><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">مدخل</span> <span class="pt">1/2</span></div><div class="ev">تسليم مشروع L3</div></td><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">مدخل</span> <span class="pt">2/2</span></div><div class="it lv-L4"><span class="tp">GPT</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">GPT</span> <span class="pt">2/2</span></div></td></tr>
+</tbody></table></div></div>
+<footer class="folio">13 / 15</footer>
+</section>
+<section class="sheet" id="w-l4" data-title="الجدول الأسبوعي: L4" aria-label="الجدول الأسبوعي: L4">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>الجدول الأسبوعي · L4</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L4">L4</span><div><h2>الجدول الأسبوعي: النماذج اللغوية الكبيرة و Transformers</h2>
+<p class="meta">أسبوع 40–47. الرقم (2/5) يعني اليوم التاني من 5 أيام للموضوع. <span class="ev inl">التقييمات</span> في يومها.</p></div></div>
+<div class="tw"><table class="wk"><thead><tr><th class="num">الأسبوع</th><th>اليوم 1</th><th>اليوم 2</th><th>اليوم 3</th></tr></thead><tbody>
+<tr><th class="num" scope="row">40</th><td><div class="it lv-L3"><span class="tp">مشروع المستوى 3</span> <span class="pt">7/7</span></div><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">مدخل</span> <span class="pt">1/2</span></div><div class="ev">تسليم مشروع L3</div></td><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">مدخل</span> <span class="pt">2/2</span></div><div class="it lv-L4"><span class="tp">GPT</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">GPT</span> <span class="pt">2/2</span></div></td></tr>
+<tr><th class="num" scope="row">41</th><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">DeepSeek</span></div></td><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">Llama</span></div><div class="it lv-L4"><span class="tp">صقل LLMs</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">صقل LLMs</span> <span class="pt">2/2</span></div></td></tr>
+<tr><th class="num" scope="row">42</th><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">Prompt Engineering</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">Prompt Engineering</span> <span class="pt">2/2</span></div><div class="it lv-L4"><span class="tp">تشغيل محلي</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L4"><span class="tk">LLMs</span><span class="tp">تشغيل محلي</span> <span class="pt">2/2</span></div><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">مقدمة</span> <span class="pt">1/2</span></div><div class="ev">تكليف Prompts</div></td></tr>
+<tr><th class="num" scope="row">43</th><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">مقدمة</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">متجر إلكتروني</span> <span class="pt">1/3</span></div></td><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">متجر إلكتروني</span> <span class="pt">2/3</span></div></td></tr>
+<tr><th class="num" scope="row">44</th><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">متجر إلكتروني</span> <span class="pt">3/3</span></div><div class="it lv-L4"><span class="tp">مطعم</span> <span class="pt">1/3</span></div></td><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">مطعم</span> <span class="pt">2/3</span></div></td><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">مطعم</span> <span class="pt">3/3</span></div><div class="it lv-L4"><span class="tp">فندق</span> <span class="pt">1/3</span></div></td></tr>
+<tr><th class="num" scope="row">45</th><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">فندق</span> <span class="pt">2/3</span></div></td><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">فندق</span> <span class="pt">3/3</span></div><div class="it lv-L4"><span class="tp">مركز خدمات</span> <span class="pt">1/3</span></div></td><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">مركز خدمات</span> <span class="pt">2/3</span></div></td></tr>
+<tr><th class="num" scope="row">46</th><td><div class="it lv-L4"><span class="tk">Transformers</span><span class="tp">مركز خدمات</span> <span class="pt">3/3</span></div><div class="it lv-L4"><span class="tp">مشروع المستوى 4</span> <span class="pt">1/4</span></div></td><td><div class="it lv-L4"><span class="tp">مشروع المستوى 4</span> <span class="pt">2/4</span></div></td><td><div class="it lv-L4"><span class="tp">مشروع المستوى 4</span> <span class="pt">3/4</span></div></td></tr>
+<tr><th class="num" scope="row">47</th><td><div class="it lv-L4"><span class="tp">مشروع المستوى 4</span> <span class="pt">4/4</span></div><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">مدخل</span> <span class="pt">1/2</span></div><div class="ev">تسليم مشروع L4</div></td><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">مدخل</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">وكيل شركة توصيل</span> <span class="pt">1/3</span></div></td></tr>
+</tbody></table></div></div>
+<footer class="folio">14 / 15</footer>
+</section>
+<section class="sheet" id="w-l5" data-title="الجدول الأسبوعي: L5" aria-label="الجدول الأسبوعي: L5">
+<header class="run"><span>خطة برنامج AI Engineer</span><span>الجدول الأسبوعي · L5</span></header>
+<div class="inner"><div class="lvhead"><span class="badge s-L5">L5</span><div><h2>الجدول الأسبوعي: وكلاء الذكاء الاصطناعي ومشروع التخرج</h2>
+<p class="meta">أسبوع 47–56. الرقم (2/5) يعني اليوم التاني من 5 أيام للموضوع. <span class="ev inl">التقييمات</span> في يومها.</p></div></div>
+<div class="tw"><table class="wk"><thead><tr><th class="num">الأسبوع</th><th>اليوم 1</th><th>اليوم 2</th><th>اليوم 3</th></tr></thead><tbody>
+<tr><th class="num" scope="row">47</th><td><div class="it lv-L4"><span class="tp">مشروع المستوى 4</span> <span class="pt">4/4</span></div><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">مدخل</span> <span class="pt">1/2</span></div><div class="ev">تسليم مشروع L4</div></td><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">مدخل</span> <span class="pt">2/2</span></div></td><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">وكيل شركة توصيل</span> <span class="pt">1/3</span></div></td></tr>
+<tr><th class="num" scope="row">48</th><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">وكيل شركة توصيل</span> <span class="pt">2/3</span></div></td><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">وكيل شركة توصيل</span> <span class="pt">3/3</span></div><div class="it lv-L5"><span class="tp">وكيل عيادة</span> <span class="pt">1/4</span></div></td><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">وكيل عيادة</span> <span class="pt">2/4</span></div></td></tr>
+<tr><th class="num" scope="row">49</th><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">وكيل عيادة</span> <span class="pt">3/4</span></div></td><td><div class="it lv-L5"><span class="tk">Pydantic AI</span><span class="tp">وكيل عيادة</span> <span class="pt">4/4</span></div><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">مقدمة</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">مقدمة</span> <span class="pt">2/2</span></div></td></tr>
+<tr><th class="num" scope="row">50</th><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">الخادم الضريبي</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">الأحوال الجوية</span> <span class="pt">1/2</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">الأحوال الجوية</span> <span class="pt">2/2</span></div><div class="it lv-L5"><span class="tp">متجر على Telegram</span> <span class="pt">1/3</span></div></td></tr>
+<tr><th class="num" scope="row">51</th><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">متجر على Telegram</span> <span class="pt">2/3</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">متجر على Telegram</span> <span class="pt">3/3</span></div><div class="it lv-L5"><span class="tp">إدارة المواعيد</span> <span class="pt">1/5</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">إدارة المواعيد</span> <span class="pt">2/5</span></div></td></tr>
+<tr><th class="num" scope="row">52</th><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">إدارة المواعيد</span> <span class="pt">3/5</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">إدارة المواعيد</span> <span class="pt">4/5</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">إدارة المواعيد</span> <span class="pt">5/5</span></div><div class="it lv-L5"><span class="tp">مركز مساعدة زيتون</span> <span class="pt">1/4</span></div></td></tr>
+<tr><th class="num" scope="row">53</th><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">مركز مساعدة زيتون</span> <span class="pt">2/4</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">مركز مساعدة زيتون</span> <span class="pt">3/4</span></div></td><td><div class="it lv-L5"><span class="tk">MCP</span><span class="tp">مركز مساعدة زيتون</span> <span class="pt">4/4</span></div><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">1/10</span></div></td></tr>
+<tr><th class="num" scope="row">54</th><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">2/10</span></div></td><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">3/10</span></div></td><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">4/10</span></div></td></tr>
+<tr><th class="num" scope="row">55</th><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">5/10</span></div></td><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">6/10</span></div></td><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">7/10</span></div></td></tr>
+<tr><th class="num" scope="row">56</th><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">8/10</span></div></td><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">9/10</span></div></td><td><div class="it lv-L5"><span class="tp">مشروع التخرج</span> <span class="pt">10/10</span></div><div class="half">نص يوم</div><div class="ev">عرض التخرج أمام اللجنة</div></td></tr>
+</tbody></table></div><p class="cap">أسابيع الراحة بين المستويات ومسار RL الاختياري مش داخلين في الجدول.</p></div>
+<footer class="folio">15 / 15</footer>
+</section>
+</main>
+
+<nav class="bar" aria-label="التنقل بين الصفحات"><div class="bar-in">
+  <button type="button" id="b-toc" aria-controls="drawer" aria-expanded="false">☰<span class="lbl"> الفهرس</span></button>
+  <button type="button" id="b-prev" aria-label="الصفحة السابقة">→<span class="lbl"> السابق</span></button>
+  <span class="pg" id="pg" aria-live="polite">1 / 15</span>
+  <button type="button" class="primary" id="b-next" aria-label="الصفحة التالية"><span class="lbl">التالي </span>←</button>
+  <button type="button" id="b-mode" aria-pressed="false">عرض الكل</button>
+</div></nav>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="الفهرس"><h2>الفهرس</h2><ol id="dlist"></ol></aside>
+
+<script>
+(function(){
+  const book=document.getElementById('book');
+  const sheets=[...book.querySelectorAll('.sheet')];
+  const N=sheets.length, pg=document.getElementById('pg');
+  const prev=document.getElementById('b-prev'), next=document.getElementById('b-next');
+  const mode=document.getElementById('b-mode'), drawer=document.getElementById('drawer'), scrim=document.getElementById('scrim'), tocBtn=document.getElementById('b-toc');
+  const dl=document.getElementById('dlist');
+  sheets.forEach((s,i)=>{const li=document.createElement('li');li.innerHTML='<a href="#'+s.id+'"><span></span><span>'+(i+1)+'</span></a>';li.querySelector('span').textContent=s.dataset.title;dl.appendChild(li)});
+  const links=[...dl.querySelectorAll('a')];
+  let cur=0, paged=true;
+  function idxOf(id){const i=sheets.findIndex(s=>s.id===id);return i<0?0:i}
+  function show(i,push){
+    cur=Math.max(0,Math.min(N-1,i));
+    if(paged){sheets.forEach((s,k)=>s.classList.toggle('on',k===cur));window.scrollTo({top:0})}
+    else sheets[cur].scrollIntoView({block:'start'});
+    pg.textContent=(cur+1)+' / '+N; prev.disabled=cur===0; next.disabled=cur===N-1;
+    links.forEach((a,k)=>a.classList.toggle('cur',k===cur));
+    if(push!==false){try{history.replaceState(null,'','#'+sheets[cur].id)}catch(e){}}
+  }
+  function openD(o){drawer.classList.toggle('open',o);scrim.hidden=!o;tocBtn.setAttribute('aria-expanded',String(o));if(o)(links[cur]||links[0]).focus()}
+  prev.onclick=()=>show(cur-1); next.onclick=()=>show(cur+1);
+  tocBtn.onclick=()=>openD(!drawer.classList.contains('open')); scrim.onclick=()=>openD(false);
+  mode.onclick=()=>{paged=!paged;book.classList.toggle('paged',paged);mode.textContent=paged?'عرض الكل':'صفحة صفحة';mode.setAttribute('aria-pressed',String(!paged));show(cur)};
+  document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;e.preventDefault();show(idxOf(a.getAttribute('href').slice(1)));openD(false)});
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape')return openD(false);
+    if(e.target.closest('input,textarea'))return;
+    if(e.key==='ArrowLeft'||e.key==='PageDown'){if(paged){e.preventDefault();show(cur+1)}}
+    else if(e.key==='ArrowRight'||e.key==='PageUp'){if(paged){e.preventDefault();show(cur-1)}}
+  });
+  let x0=null,y0=null;
+  book.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+  book.addEventListener('touchend',e=>{if(x0===null||!paged)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;
+    if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.6&&!e.target.closest('.tw'))show(cur+(dx>0?1:-1));x0=null},{passive:true});
+  if(!paged)return;
+  window.addEventListener('scroll',()=>{if(paged)return;let best=0;sheets.forEach((s,k)=>{if(s.getBoundingClientRect().top<innerHeight*.4)best=k});if(best!==cur){cur=best;pg.textContent=(cur+1)+' / '+N;prev.disabled=cur===0;next.disabled=cur===N-1;links.forEach((a,k)=>a.classList.toggle('cur',k===cur))}},{passive:true});
+  show(idxOf(location.hash.slice(1)),false);
+})();
+</script>
+
+</body></html>
